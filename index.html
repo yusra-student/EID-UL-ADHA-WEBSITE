@@ -1,0 +1,1264 @@
+# Complete Updated Eid ul Adha Premium Theme Code
+
+```html
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>عید الاضحی - Eid ul Adha</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Noto+Nastaliq+Urdu:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --gold: #D4AF37;
+    --gold-light: #FFD970;
+    --gold-dark: #9B7B1E;
+
+    --green-deep: #06152B;
+    --green-mid: #0B2447;
+    --green-light: #19376D;
+
+    --cream: #F8F5E9;
+    --white-soft: #FEFDF8;
+    --text-dark: #1A1208;
+
+    --shadow-gold: rgba(212, 175, 55, 0.35);
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background:
+      linear-gradient(rgba(6,21,43,0.93), rgba(6,21,43,0.96)),
+      url('https://images.unsplash.com/photo-1564769625905-50e93615e769?q=80&w=1600&auto=format&fit=crop');
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    font-family: 'Amiri', serif;
+    color: var(--cream);
+    min-height: 100vh;
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  body::after {
+    content: '';
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 280px;
+    background: url('https://i.imgur.com/6IUbEMk.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    opacity: 0.10;
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image:
+      radial-gradient(1px 1px at 10% 15%, rgba(240,208,128,0.7) 0%, transparent 100%),
+      radial-gradient(1.5px 1.5px at 25% 40%, rgba(240,208,128,0.5) 0%, transparent 100%),
+      radial-gradient(1px 1px at 50% 8%, rgba(255,255,255,0.6) 0%, transparent 100%),
+      radial-gradient(1px 1px at 75% 22%, rgba(240,208,128,0.8) 0%, transparent 100%);
+    pointer-events: none;
+    z-index: 0;
+    animation: twinkle 4s ease-in-out infinite alternate;
+  }
+
+  @keyframes twinkle {
+    0% { opacity: 0.7; }
+    100% { opacity: 1; }
+  }
+
+  header {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 40px 20px 30px;
+  }
+
+  .moon-star {
+    font-size: 70px;
+    animation: float 3s ease-in-out infinite;
+    display: block;
+    margin-bottom: 10px;
+    filter: drop-shadow(0 0 20px var(--gold));
+  }
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-12px); }
+  }
+
+  header h1 {
+    font-size: clamp(2rem, 6vw, 4rem);
+    color: var(--gold-light);
+    text-shadow: 0 0 30px var(--shadow-gold), 0 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: 2px;
+    line-height: 1.3;
+    margin-bottom: 8px;
+  }
+
+  header p {
+    color: var(--gold);
+    font-size: 1.1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px auto;
+    max-width: 500px;
+  }
+
+  .divider-line {
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+
+  .divider-icon { color: var(--gold); font-size: 1.2rem; }
+
+  nav {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 0 20px 30px;
+  }
+
+  nav button {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.1);
+    color: var(--gold-light);
+    padding: 10px 22px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    transition: all 0.4s ease;
+  }
+
+  nav button:hover,
+  nav button.active {
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--green-deep);
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 25px var(--shadow-gold);
+  }
+
+  main {
+    position: relative;
+    z-index: 1;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 60px;
+  }
+
+  .section {
+    display: none;
+    animation: fadeIn 0.5s ease;
+  }
+
+  .section.active { display: block; }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 22px;
+    padding: 30px;
+    margin-bottom: 25px;
+    backdrop-filter: blur(18px);
+    box-shadow:
+      0 8px 32px rgba(0,0,0,0.35),
+      0 0 20px rgba(212,175,55,0.08);
+    transition: all 0.4s ease;
+  }
+
+  .card:hover,
+  .dua-card:hover,
+  .tasbih-item:hover {
+    transform: translateY(-8px) scale(1.01);
+    box-shadow:
+      0 15px 40px rgba(0,0,0,0.45),
+      0 0 25px rgba(212,175,55,0.25);
+  }
+
+  .card-title {
+    color: var(--gold-light);
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+    text-align: center;
+    border-bottom: 1px solid rgba(201,168,76,0.2);
+    padding-bottom: 12px;
+  }
+
+  .dua-card {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    transition: all .4s ease;
+    animation: softGlow 3s infinite alternate;
+  }
+
+  @keyframes softGlow {
+    0% {
+      box-shadow: 0 0 10px rgba(212,175,55,0.1);
+    }
+
+    100% {
+      box-shadow: 0 0 25px rgba(212,175,55,0.35);
+    }
+  }
+
+  .dua-title {
+    color: var(--gold-light);
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+  }
+
+  .dua-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--green-deep);
+    font-weight: 700;
+    margin-bottom: 14px;
+  }
+
+  .dua-arabic-text {
+    font-size: 1.7rem;
+    line-height: 2;
+    margin-bottom: 12px;
+    color: white;
+  }
+
+  .dua-translation {
+    color: rgba(255,255,255,0.8);
+    line-height: 2;
+  }
+
+  .ayat-box {
+    background: rgba(255,255,255,0.05);
+    border: 1px solid rgba(255,255,255,0.08);
+    border-radius: 16px;
+    padding: 18px 20px;
+    margin: 18px 0;
+  }
+
+  .ayat-arabic {
+    font-size: 1.6rem;
+    color: var(--gold-light);
+    line-height: 2;
+  }
+
+  .ayat-ref {
+    margin-top: 10px;
+    color: rgba(255,255,255,0.8);
+    font-size: 0.98rem;
+  }
+
+  .waqia-highlight {
+    background: rgba(212,175,55,0.1);
+    border-radius: 14px;
+    padding: 14px 16px;
+    margin: 14px 0;
+    color: #fff;
+    line-height: 2;
+  }
+
+  .waqia-intro {
+    color: rgba(255,255,255,0.85);
+    line-height: 2;
+    margin: 14px 0;
+  }
+
+  .tasbih-item {
+    background: rgba(0,0,0,0.2);
+    border-radius: 16px;
+    padding: 20px;
+    margin-bottom: 16px;
+    transition: all .4s ease;
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+    flex-wrap: wrap;
+  }
+
+  .tasbih-arabic {
+    font-size: 2rem;
+    color: var(--gold-light);
+    line-height: 1.8;
+  }
+
+  .tasbih-urdu {
+    color: rgba(255,255,255,0.7);
+    margin-top: 5px;
+  }
+
+  .counter-controls {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    justify-content: center;
+    margin-bottom: 10px;
+  }
+
+  .btn-count,
+  .btn-reset {
+    border: 0;
+    border-radius: 999px;
+    font-family: 'Amiri', serif;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+  }
+
+  .btn-count {
+    width: 42px;
+    height: 42px;
+    background: linear-gradient(135deg, var(--gold-dark), var(--gold));
+    color: var(--green-deep);
+    font-size: 1.4rem;
+    font-weight: 700;
+  }
+
+  .btn-count:hover,
+  .btn-reset:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(212,175,55,0.2);
+  }
+
+  .count-display {
+    min-width: 54px;
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--gold-light);
+  }
+
+  .target-label {
+    color: rgba(255,255,255,0.8);
+    text-align: center;
+    font-size: 0.95rem;
+  }
+
+  .btn-reset {
+    background: rgba(255,255,255,0.08);
+    color: var(--cream);
+    padding: 8px 16px;
+    border: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .progress-bar {
+    width: 100%;
+    height: 10px;
+    background: rgba(255,255,255,0.08);
+    border-radius: 999px;
+    overflow: hidden;
+    margin-top: 14px;
+  }
+
+  .progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--gold-light), var(--gold));
+    border-radius: inherit;
+    width: 0%;
+    transition: width 0.2s ease;
+  }
+
+  footer {
+    position: relative;
+    z-index: 1;
+    text-align: center;
+    padding: 30px 20px;
+    color: rgba(201,168,76,0.5);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <span class="moon-star">🐄🕌</span>
+  <h1>عید الاضحیٰ مبارک</h1>
+  <p>Eid ul Adha 1446 AH</p>
+
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">✦</span>
+    <div class="divider-line"></div>
+  </div>
+</header>
+
+<nav>
+  <button class="active" onclick="showSection('tasbih')">📿 تسبیح</button>
+  <button onclick="showSection('duayen')">🤲 دعائیں</button>
+  <button onclick="showSection('waqia')">📖 واقعہ</button>
+  <button onclick="showSection('mubarak')">🌙 عید مبارک</button>
+</nav>
+
+<main>
+
+<section id="tasbih" class="section active">
+  <div class="card">
+    <div class="card-title">📿 روزانہ تسبیحات</div>
+
+    <div class="tasbih-item" id="item-1">
+      <div>
+        <div class="tasbih-arabic">سُبْحَانَ اللهِ</div>
+        <div class="tasbih-urdu">33 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(1)">−</button>
+          <div>
+            <div class="count-display" id="count-1">0</div>
+            <div class="target-label">/ 33</div>
+          </div>
+          <button class="btn-count" onclick="increment(1)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(1)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-1" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-2">
+      <div>
+        <div class="tasbih-arabic">اَلْحَمْدُ لِلَّهِ</div>
+        <div class="tasbih-urdu">33 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(2)">−</button>
+          <div>
+            <div class="count-display" id="count-2">0</div>
+            <div class="target-label">/ 33</div>
+          </div>
+          <button class="btn-count" onclick="increment(2)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(2)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-2" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-3">
+      <div>
+        <div class="tasbih-arabic">اَللهُ أَكْبَرُ</div>
+        <div class="tasbih-urdu">34 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(3)">−</button>
+          <div>
+            <div class="count-display" id="count-3">0</div>
+            <div class="target-label">/ 34</div>
+          </div>
+          <button class="btn-count" onclick="increment(3)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(3)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-3" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-5">
+      <div>
+        <div class="tasbih-arabic">لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ</div>
+        <div class="tasbih-urdu">تلبیہ • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(5)">−</button>
+          <div>
+            <div class="count-display" id="count-5">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(5)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(5)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-5" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-10">
+      <div>
+        <div class="tasbih-arabic" style="font-size:1.4rem; line-height:2;">
+          لَبَّيْكَ اللَّهُمَّ لَبَّيْكَ، لَبَّيْكَ لَا شَرِيكَ لَكَ لَبَّيْكَ، إِنَّ الْحَمْدَ وَالنِّعْمَةَ لَكَ وَالْمُلْكَ لَا شَرِيكَ لَكَ
+        </div>
+        <div class="tasbih-urdu">حج کی تلبیہ • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(10)">−</button>
+          <div>
+            <div class="count-display" id="count-10">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(10)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(10)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-10" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-11">
+      <div>
+        <div class="tasbih-arabic">رَبَّنَا تَقَبَّلْ مِنَّا</div>
+        <div class="tasbih-urdu">حج کی قبولیت • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(11)">−</button>
+          <div>
+            <div class="count-display" id="count-11">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(11)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(11)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-11" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-12">
+      <div>
+        <div class="tasbih-arabic">اَللّٰهُمَّ بَارِكْ لَنَا فِي حَجِّنَا</div>
+        <div class="tasbih-urdu">حج میں برکت • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(12)">−</button>
+          <div>
+            <div class="count-display" id="count-12">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(12)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(12)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-12" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-6">
+      <div>
+        <div class="tasbih-arabic">أَسْتَغْفِرُ اللهَ</div>
+        <div class="tasbih-urdu">استغفار • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(6)">−</button>
+          <div>
+            <div class="count-display" id="count-6">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(6)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(6)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-6" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-7">
+      <div>
+        <div class="tasbih-arabic">اَللّٰهُمَّ صَلِّ عَلٰى مُحَمَّدٍ</div>
+        <div class="tasbih-urdu">درود شریف • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(7)">−</button>
+          <div>
+            <div class="count-display" id="count-7">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(7)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(7)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-7" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-8">
+      <div>
+        <div class="tasbih-arabic">لَا إِلٰهَ إِلَّا اللهُ</div>
+        <div class="tasbih-urdu">تہلیل • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(8)">−</button>
+          <div>
+            <div class="count-display" id="count-8">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(8)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(8)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-8" style="width:0%"></div>
+      </div>
+    </div>
+
+    <div class="tasbih-item" id="item-9">
+      <div>
+        <div class="tasbih-arabic">حَسْبُنَا اللهُ وَنِعْمَ الْوَكِيلُ</div>
+        <div class="tasbih-urdu">اللہ ہمارے لیے کافی ہے • 100 بار</div>
+      </div>
+
+      <div style="direction:ltr; min-width:220px;">
+        <div class="counter-controls">
+          <button class="btn-count" onclick="decrement(9)">−</button>
+          <div>
+            <div class="count-display" id="count-9">0</div>
+            <div class="target-label">/ 100</div>
+          </div>
+          <button class="btn-count" onclick="increment(9)">+</button>
+        </div>
+
+        <button class="btn-reset" onclick="resetCount(9)">Reset</button>
+      </div>
+
+      <div class="progress-bar">
+        <div class="progress-fill" id="prog-9" style="width:0%"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="duayen" class="section">
+
+  <div class="dua-card">
+    <div class="dua-number">1</div>
+    <div class="dua-title">🤲 عید کی دعا</div>
+
+    <div class="dua-arabic-text">
+      اَللّٰهُمَّ إِنِّي أَسْأَلُكَ مِنْ خَيْرِ هَذَا الْيَوْمِ
+    </div>
+
+    <div class="dua-translation">
+      اے اللہ! میں آپ سے اس دن کی بھلائی مانگتا ہوں۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">2</div>
+    <div class="dua-title">📿 پہلا کلمہ طیبہ</div>
+
+    <div class="dua-arabic-text">
+      لَا إِلٰهَ إِلَّا اللهُ مُحَمَّدٌ رَسُولُ اللهِ
+    </div>
+
+    <div class="dua-translation">
+      اللہ کے سوا کوئی معبود نہیں، محمد ﷺ اللہ کے رسول ہیں۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">3</div>
+    <div class="dua-title">🌙 دوسرا کلمہ شہادت</div>
+
+    <div class="dua-arabic-text">
+      أَشْهَدُ أَنْ لَا إِلٰهَ إِلَّا اللهُ وَحْدَهُ لَا شَرِيكَ لَهُ
+    </div>
+
+    <div class="dua-translation">
+      میں گواہی دیتا ہوں کہ اللہ ایک ہے۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">4</div>
+    <div class="dua-title">✨ تیسرا کلمہ تمجید</div>
+
+    <div class="dua-arabic-text">
+      سُبْحَانَ اللهِ وَالْحَمْدُ لِلَّهِ وَلَا إِلٰهَ إِلَّا اللهُ وَاللهُ أَكْبَرُ
+    </div>
+
+    <div class="dua-translation">
+      اللہ پاک ہے، سب تعریفیں اللہ کیلئے ہیں۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">5</div>
+    <div class="dua-title">📖 سورۃ الاخلاص</div>
+
+    <div class="dua-arabic-text">
+      قُلْ هُوَ اللهُ أَحَدٌ ۝
+      اللهُ الصَّمَدُ ۝
+      لَمْ يَلِدْ وَلَمْ يُولَدْ ۝
+      وَلَمْ يَكُن لَّهُ كُفُوًا أَحَدٌ
+    </div>
+
+    <div class="dua-translation">
+      کہو: وہ اللہ ایک ہے، اللہ بے نیاز ہے۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">6</div>
+    <div class="dua-title">🕋 حج قبول ہونے کی دعا</div>
+    <div class="dua-arabic-text">
+      رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ
+    </div>
+    <div class="dua-translation">
+      اے ہمارے رب! ہم سے یہ قبول فرما، بے شک تو خوب سننے والا اور جاننے والا ہے۔
+      (سورۃ البقرہ: 127)
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">7</div>
+    <div class="dua-title">🌙 مغفرت کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ إِنَّكَ عَفُوٌّ تُحِبُّ الْعَفْوَ فَاعْفُ عَنِّي
+    </div>
+    <div class="dua-translation">
+      اے اللہ! بے شک تو معاف کرنے والا ہے، معافی کو پسند کرتا ہے، پس مجھے معاف فرما۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">8</div>
+    <div class="dua-title">💚 رزق اور برکت کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ بَارِكْ لَنَا فِيمَا رَزَقْتَنَا
+    </div>
+    <div class="dua-translation">
+      اے اللہ! ہمیں جو رزق عطا فرمایا ہے اس میں برکت عطا فرما۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">9</div>
+    <div class="dua-title">🤲 والدین کے لیے دعا</div>
+    <div class="dua-arabic-text">
+      رَبِّ ارْحَمْهُمَا كَمَا رَبَّيَانِي صَغِيرًا
+    </div>
+    <div class="dua-translation">
+      اے میرے رب! میرے والدین پر رحم فرما جیسے انہوں نے بچپن میں مجھے پالا۔
+      (سورۃ الاسراء: 24)
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">10</div>
+    <div class="dua-title">☀️ بیماری سے شفا کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ رَبَّ النَّاسِ أَذْهِبِ الْبَأْسَ وَاشْفِ أَنْتَ الشَّافِي
+    </div>
+    <div class="dua-translation">
+      اے لوگوں کے رب! بیماری دور فرما اور شفا عطا فرما، تو ہی شفا دینے والا ہے۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">11</div>
+    <div class="dua-title">🌟 جنت کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ إِنِّي أَسْأَلُكَ الْجَنَّةَ
+    </div>
+    <div class="dua-translation">
+      اے اللہ! میں تجھ سے جنت کا سوال کرتا ہوں۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">12</div>
+    <div class="dua-title">🕊️ سکونِ دل کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ اجْعَلْ فِي قَلْبِي نُورًا
+    </div>
+    <div class="dua-translation">
+      اے اللہ! میرے دل میں نور عطا فرما۔
+    </div>
+  </div>
+
+  <div class="dua-card">
+    <div class="dua-number">13</div>
+    <div class="dua-title">🌿 خیر و بھلائی کی دعا</div>
+    <div class="dua-arabic-text">
+      اللَّهُمَّ إِنِّي أَسْأَلُكَ الْخَيْرَ كُلَّهُ
+    </div>
+    <div class="dua-translation">
+      اے اللہ! میں تجھ سے ہر قسم کی بھلائی مانگتا ہوں۔
+    </div>
+  </div>
+
+</section>
+
+<section id="waqia" class="section">
+  <div class="card">
+    <div class="card-title">📖 حج اور قربانی کا تفصیلی واقعہ</div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        وَإِذِ ابْتَلَىٰ إِبْرَاهِيمَ رَبُّهُ بِكَلِمَاتٍ فَأَتَمَّهُنَّ
+      </div>
+      <div class="ayat-ref">سورۃ البقرہ: 124</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        اور جب ابراہیمؑ کو ان کے رب نے کئی آزمائشوں میں ڈالا اور انہوں نے سب کو پورا کر دکھایا۔
+      </div>
+    </div>
+
+    <div class="waqia-highlight">
+      🌙 حضرت ابراہیم علیہ السلام اللہ تعالیٰ کے بہت محبوب نبی تھے۔
+      اللہ تعالیٰ نے انہیں کئی سخت آزمائشوں سے گزارا تاکہ قیامت تک آنے والے لوگوں کو ایمان، صبر اور قربانی کا درس ملے۔
+    </div>
+
+    <div class="waqia-intro">
+      حضرت ابراہیم علیہ السلام کی کوئی اولاد نہیں تھی۔
+      انہوں نے برسوں اللہ تعالیٰ سے دعا مانگی۔
+      آخرکار اللہ تعالیٰ نے انہیں بڑھاپے میں حضرت اسماعیل علیہ السلام عطا فرمائے۔
+    </div>
+
+    <div class="waqia-highlight">
+      👶 حضرت اسماعیلؑ کی پیدائش حضرت ابراہیمؑ کے لیے بہت بڑی خوشی تھی کیونکہ وہ انہیں بہت محبت کرتے تھے۔
+    </div>
+
+    <div class="waqia-intro">
+      پھر اللہ تعالیٰ نے حکم دیا کہ حضرت ہاجرہؑ اور ننھے حضرت اسماعیلؑ کو مکہ کی سنسان وادی میں چھوڑ آئیں جہاں نہ پانی تھا نہ لوگ۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        رَبَّنَا إِنِّي أَسْكَنْتُ مِن ذُرِّيَّتِي بِوَادٍ غَيْرِ ذِي زَرْعٍ
+      </div>
+      <div class="ayat-ref">سورۃ ابراہیم: 37</div>
+    </div>
+
+    <div class="waqia-intro">
+      حضرت ابراہیمؑ اللہ کے حکم پر اپنے اہلِ خانہ کو وہاں چھوڑ کر واپس آنے لگے۔
+      حضرت ہاجرہؑ نے پوچھا:
+    </div>
+
+    <div class="waqia-highlight">
+      "کیا یہ اللہ کا حکم ہے؟"
+    </div>
+
+    <div class="waqia-intro">
+      حضرت ابراہیمؑ نے فرمایا: "جی ہاں۔"
+      تو حضرت ہاجرہؑ نے کہا:
+    </div>
+
+    <div class="waqia-highlight">
+      💚 "پھر اللہ ہمیں ضائع نہیں کرے گا۔"
+    </div>
+
+    <div class="waqia-intro">
+      کچھ وقت بعد پانی ختم ہوگیا۔
+      ننھے حضرت اسماعیلؑ پیاس سے رونے لگے۔
+      حضرت ہاجرہؑ پانی کی تلاش میں صفا اور مروہ پہاڑیوں کے درمیان سات مرتبہ دوڑیں۔
+    </div>
+
+    <div class="waqia-highlight">
+      🕋 اسی یاد میں آج بھی حاجی صفا اور مروہ کے درمیان سعی کرتے ہیں۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        إِنَّ الصَّفَا وَالْمَرْوَةَ مِن شَعَائِرِ اللَّهِ
+      </div>
+      <div class="ayat-ref">سورۃ البقرہ: 158</div>
+    </div>
+
+    <div class="waqia-intro">
+      پھر اللہ تعالیٰ نے حضرت جبرائیلؑ کو بھیجا اور زمین سے زمزم کا مبارک چشمہ جاری ہوگیا۔
+    </div>
+
+    <div class="waqia-highlight">
+      💧 یہی زمزم آج تک جاری ہے اور دنیا بھر کے مسلمان اسے بابرکت پانی سمجھتے ہیں۔
+    </div>
+
+    <div class="waqia-intro">
+      کچھ عرصہ بعد اللہ تعالیٰ نے حضرت ابراہیمؑ اور حضرت اسماعیلؑ کو خانہ کعبہ تعمیر کرنے کا حکم دیا۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        وَإِذْ يَرْفَعُ إِبْرَاهِيمُ الْقَوَاعِدَ مِنَ الْبَيْتِ وَإِسْمَاعِيلُ
+      </div>
+      <div class="ayat-ref">سورۃ البقرہ: 127</div>
+    </div>
+
+    <div class="waqia-highlight">
+      🕌 حضرت ابراہیمؑ اور حضرت اسماعیلؑ نے مل کر خانہ کعبہ تعمیر کیا اور دعا مانگی کہ اللہ ان کی عبادت قبول فرمائے۔
+    </div>
+
+    <div class="waqia-intro">
+      پھر اللہ تعالیٰ نے حضرت ابراہیمؑ کو خواب میں حکم دیا کہ اپنے بیٹے حضرت اسماعیلؑ کو اللہ کی راہ میں قربان کریں۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        يَا بُنَيَّ إِنِّي أَرَىٰ فِي الْمَنَامِ أَنِّي أَذْبَحُكَ فَانظُرْ مَاذَا تَرَىٰ
+      </div>
+      <div class="ayat-ref">سورۃ الصافات: 102</div>
+    </div>
+
+    <div class="waqia-intro">
+      حضرت ابراہیمؑ نے اپنے بیٹے سے مشورہ کیا۔
+      حضرت اسماعیلؑ نے صبر اور اطاعت کا عظیم نمونہ پیش کرتے ہوئے فرمایا:
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        يَا أَبَتِ افْعَلْ مَا تُؤْمَرُ سَتَجِدُنِي إِن شَاءَ اللَّهُ مِنَ الصَّابِرِينَ
+      </div>
+      <div class="ayat-ref">سورۃ الصافات: 102</div>
+    </div>
+
+    <div class="waqia-highlight">
+      🌟 "ابا جان! آپ کو جو حکم ملا ہے وہ کر دیجیے، ان شاء اللہ آپ مجھے صبر کرنے والوں میں پائیں گے۔"
+    </div>
+
+    <div class="waqia-intro">
+      جب حضرت ابراہیمؑ نے اپنے بیٹے کو قربان کرنے کے لیے لٹایا اور چھری چلانے لگے تو اللہ تعالیٰ نے حضرت اسماعیلؑ کی جگہ جنت سے ایک دنبہ بھیج دیا۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        وَفَدَيْنَاهُ بِذِبْحٍ عَظِيمٍ
+      </div>
+      <div class="ayat-ref">سورۃ الصافات: 107</div>
+    </div>
+
+    <div class="waqia-highlight">
+      🐑 اللہ تعالیٰ نے حضرت ابراہیمؑ کی قربانی قبول فرمائی اور اسی یاد میں مسلمان ہر سال عید الاضحیٰ پر قربانی کرتے ہیں۔
+    </div>
+
+    <div class="waqia-intro">
+      آج حج کے اعمال — احرام، طواف، سعی، قربانی، منیٰ، عرفات — سب حضرت ابراہیمؑ، حضرت ہاجرہؑ اور حضرت اسماعیلؑ کی عظیم قربانیوں کی یادگار ہیں۔
+    </div>
+
+    <div class="waqia-highlight">
+      💚 حج اور قربانی ہمیں یہ سکھاتے ہیں کہ اللہ کی رضا کے لیے اپنی خواہشات، محبتیں اور آرام سب قربان کرنے پڑتے ہیں۔
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🌟 حج کی فضیلت اور اہمیت</div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        وَلِلَّهِ عَلَى النَّاسِ حِجُّ الْبَيْتِ مَنِ اسْتَطَاعَ إِلَيْهِ سَبِيلًا
+      </div>
+      <div class="ayat-ref">سورۃ آل عمران: 97</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        اور اللہ کے لیے لوگوں پر اس گھر کا حج فرض ہے جو وہاں تک پہنچنے کی استطاعت رکھتا ہو۔
+      </div>
+    </div>
+
+    <div class="waqia-highlight">
+      🕋 حج اسلام کے پانچ بنیادی ارکان میں سے ایک عظیم رکن ہے۔
+      ہر صاحبِ استطاعت مسلمان پر زندگی میں ایک بار حج فرض ہے۔
+    </div>
+
+    <div class="waqia-highlight">
+      🌙 حج اتحادِ امت، صبر، عاجزی، تقویٰ اور اللہ سے محبت کا بہترین درس دیتا ہے۔
+    </div>
+
+    <div class="waqia-intro">
+      دنیا بھر سے لاکھوں مسلمان ایک لباس (احرام) میں جمع ہو کر یہ ثابت کرتے ہیں کہ اللہ کے نزدیک سب برابر ہیں۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        الْحَجُّ الْمَبْرُورُ لَيْسَ لَهُ جَزَاءٌ إِلَّا الْجَنَّةُ
+      </div>
+      <div class="ayat-ref">صحیح بخاری</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        مقبول حج کا بدلہ جنت کے سوا کچھ نہیں۔
+      </div>
+    </div>
+
+    <div class="waqia-highlight">
+      💚 جو شخص اخلاص کے ساتھ حج کرتا ہے اس کے گناہ معاف ہو جاتے ہیں۔
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">☀️ یومِ عرفہ کی فضیلت</div>
+
+    <div class="waqia-highlight">
+      📅 9 ذوالحجہ کا دن اسلام میں بہت عظیم دن ہے۔
+      اس دن اللہ تعالیٰ اپنے بندوں پر خاص رحمت نازل فرماتے ہیں۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        الْيَوْمَ أَكْمَلْتُ لَكُمْ دِينَكُمْ
+      </div>
+      <div class="ayat-ref">سورۃ المائدہ: 3</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        آج میں نے تمہارے لیے تمہارا دین مکمل کر دیا۔
+      </div>
+    </div>
+
+    <div class="waqia-intro">
+      یہ آیت حجۃ الوداع کے موقع پر میدانِ عرفات میں نازل ہوئی تھی۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        صِيَامُ يَوْمِ عَرَفَةَ أَحْتَسِبُ عَلَى اللهِ أَنْ يُكَفِّرَ السَّنَةَ الَّتِي قَبْلَهُ وَالسَّنَةَ الَّتِي بَعْدَهُ
+      </div>
+      <div class="ayat-ref">صحیح مسلم</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        یوم عرفہ کے روزے سے ایک سال پچھلے اور ایک سال آئندہ کے گناہ معاف ہو جاتے ہیں۔
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <div class="card-title">🐑 قربانی کی فضیلت اور اہمیت</div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        فَصَلِّ لِرَبِّكَ وَانْحَرْ
+      </div>
+      <div class="ayat-ref">سورۃ الکوثر: 2</div>
+    </div>
+
+    <div class="waqia-highlight">
+      🌟 قربانی اللہ تعالیٰ کی رضا حاصل کرنے کا عظیم ذریعہ ہے۔
+      یہ حضرت ابراہیمؑ اور حضرت اسماعیلؑ کی اطاعت و قربانی کی یادگار ہے۔
+    </div>
+
+    <div class="waqia-intro">
+      قربانی ہمیں اخلاص، ایثار، صبر، اللہ کی محبت اور فرمانبرداری کا درس دیتی ہے۔
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        لَن يَنَالَ اللَّهَ لُحُومُهَا وَلَا دِمَاؤُهَا وَلَٰكِن يَنَالُهُ التَّقْوَىٰ مِنكُمْ
+      </div>
+      <div class="ayat-ref">سورۃ الحج: 37</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        اللہ تک نہ ان کا گوشت پہنچتا ہے اور نہ خون بلکہ تمہارا تقویٰ پہنچتا ہے۔
+      </div>
+    </div>
+
+    <div class="ayat-box">
+      <div class="ayat-arabic">
+        مَا عَمِلَ ابْنُ آدَمَ يَوْمَ النَّحْرِ عَمَلًا أَحَبَّ إِلَى اللهِ مِنْ إِهْرَاقِ الدَّمِ
+      </div>
+      <div class="ayat-ref">جامع ترمذی</div>
+      <div style="margin-top:15px; color:rgba(255,255,255,0.8); line-height:2;">
+        قربانی کے دن اللہ کے نزدیک خون بہانے سے زیادہ محبوب عمل کوئی نہیں۔
+      </div>
+    </div>
+
+    <div class="waqia-highlight">
+      🐄 قربانی کا گوشت غریبوں، رشتہ داروں اور ضرورت مندوں میں تقسیم کرنا محبت اور بھائی چارے کو بڑھاتا ہے۔
+    </div>
+  </div>
+</section>
+
+<section id="mubarak" class="section">
+  <div class="card" style="text-align:center;">
+
+    <div class="moon-star">🌙</div>
+
+    <h1 style="font-size:4rem; color:var(--gold-light);">
+      عید مبارک
+    </h1>
+
+    <p style="margin-top:20px; line-height:2; color:#eee;">
+      اللہ تعالیٰ آپ کی عبادات اور قربانی قبول فرمائے۔
+    </p>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="divider">
+    <div class="divider-line"></div>
+    <span class="divider-icon">🌙</span>
+    <div class="divider-line"></div>
+  </div>
+
+  <p style="margin-top:15px;">
+    عید الاضحیٰ 1446 ہجری • بنایا گیا: اللہ کی رضا کے لیے
+  </p>
+</footer>
+
+<script>
+const STORAGE_KEY = 'eid-tasbih-counts';
+const TARGETS = {
+  1: 33,
+  2: 33,
+  3: 34,
+  5: 100,
+  6: 100,
+  7: 100,
+  8: 100,
+  9: 100,
+  10: 100,
+  11: 100,
+  12: 100
+};
+
+function getSavedCounts() {
+  try {
+    const saved = JSON.parse(localStorage.getItem(STORAGE_KEY));
+    if (saved && typeof saved === 'object') {
+      return saved;
+    }
+  } catch (error) {
+    console.warn('Unable to load tasbih counts:', error);
+  }
+
+  return {};
+}
+
+function saveCounts(counts) {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(counts));
+}
+
+function updateDisplay(id) {
+  const count = Number(document.getElementById(`count-${id}`).textContent || 0);
+  const progress = document.getElementById(`prog-${id}`);
+  const target = TARGETS[id] ?? 100;
+
+  progress.style.width = `${Math.min((count / target) * 100, 100)}%`;
+}
+
+function increment(id) {
+  const countEl = document.getElementById(`count-${id}`);
+  const target = TARGETS[id] ?? 100;
+  let count = Number(countEl.textContent || 0);
+
+  if (count < target) {
+    count += 1;
+    countEl.textContent = count;
+
+    const counts = getSavedCounts();
+    counts[id] = count;
+    saveCounts(counts);
+    updateDisplay(id);
+  }
+}
+
+function decrement(id) {
+  const countEl = document.getElementById(`count-${id}`);
+  let count = Number(countEl.textContent || 0);
+
+  if (count > 0) {
+    count -= 1;
+    countEl.textContent = count;
+
+    const counts = getSavedCounts();
+    counts[id] = count;
+    saveCounts(counts);
+    updateDisplay(id);
+  }
+}
+
+function resetCount(id) {
+  const countEl = document.getElementById(`count-${id}`);
+  countEl.textContent = 0;
+
+  const counts = getSavedCounts();
+  delete counts[id];
+  saveCounts(counts);
+  updateDisplay(id);
+}
+
+function showSection(id) {
+  document.querySelectorAll('.section').forEach(s => s.classList.remove('active'));
+  document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+  event.target.classList.add('active');
+}
+
+window.addEventListener('DOMContentLoaded', () => {
+  const counts = getSavedCounts();
+
+  for (let id = 1; id <= 12; id++) {
+    const savedCount = counts[id] ?? 0;
+    const countEl = document.getElementById(`count-${id}`);
+
+    if (countEl) {
+      countEl.textContent = savedCount;
+      updateDisplay(id);
+    }
+  }
+});
+</script>
+
+</body>
+</html>
+```
